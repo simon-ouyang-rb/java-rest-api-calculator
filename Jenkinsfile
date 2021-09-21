@@ -9,10 +9,10 @@ pipeline {
             }
         }
         stage('Test') {
-            steps: {
+            steps {
                 sh './mvnw test'
             }
-            post: {
+            post {
                 always {
                     junit '**/target/surefire-reports/TEST-*.xml'
                 }
